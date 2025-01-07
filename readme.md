@@ -126,7 +126,7 @@ python inference/inference_detr.py //then input your filename include the extens
 ## 📂 Project Structure
 
 ```
-DETR_AZKA/
+detr_customdateset_roboflow/
 ├── 📁 data/
 │   └── dataset.py
 ├── 📁 inference/

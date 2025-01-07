@@ -6,6 +6,48 @@ A powerful PyTorch Lightning implementation of Detection Transformer (DETR) for 
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+## 🧠 Arsitektur Model DETR
+
+Model DETR yang digunakan dalam proyek ini terdiri dari beberapa komponen utama:
+
+1. **Backbone (ResNet-50)**: 
+   - Digunakan untuk mengekstrak fitur dari gambar input.
+   - Layer terakhir (`layer4`) dari ResNet dihapus untuk mempertahankan fitur spatial.
+   
+2. **Positional Encoding**:
+   - Menambahkan informasi posisi pada fitur yang dihasilkan oleh backbone.
+   - Menggunakan **sinusoidal positional encoding**.
+
+3. **Transformer Encoder-Decoder**:
+   - **Encoder**: Memproses fitur yang diberikan oleh backbone bersama dengan positional encoding.
+   - **Decoder**: Menerima query embedding untuk memprediksi bounding box dan label kelas.
+
+4. **Detection Heads**:
+   - **Classification Head**: Untuk memprediksi label kelas.
+   - **Bounding Box Regression Head**: Untuk memprediksi koordinat bounding box.
+
+### ⚛️Struktur Model
+
+```mermaid
+flowchart TD
+    A["Input Image + Annotations"] --> B[Data Augmentation]
+    B --> C[ResNet-50 Backbone]
+    C --> D["Conv Layer (2048 channels to 256 channels)"]
+    D --> E[Flatten Features]
+    E --> F[Positional Encoding]
+    F --> G[Transformer Encoder]
+    G --> H[Transformer Decoder]
+    H --> I[Query Embedding]
+    I --> J1[Classification Head]
+    I --> J2[Bounding Box Regression Head]
+    J1 --> K1[Calculate Classification Loss]
+    J2 --> K2[Calculate Bounding Box Loss]
+    K1 & K2 --> L[Total Loss]
+    L --> M[Backpropagation]
+    M --> N["Optimizer (e.g., Adam)"]
+    N --> O[Save Checkpoint]
+```
+
 ## 🌟 Highlights
 
 - 🚀 Fast and efficient object detection

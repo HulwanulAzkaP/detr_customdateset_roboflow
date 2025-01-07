@@ -145,7 +145,7 @@ detr_customdateset_roboflow/
 │   └── 📁 utils/
 │       ├── helpers.py
 │       ├── logging_config.py
-│       └── config.py
+│── config.py       
 ├── evaluate.py
 └── train.py
 ```

@@ -19,8 +19,8 @@ A powerful PyTorch Lightning implementation of Detection Transformer (DETR) for 
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/DETR_AZKA.git
-cd DETR_AZKA
+git clone https://github.com/HulwanulAzkaP/detr_customdateset_roboflow.git
+cd detr_customdataset_roboflow
 ```
 
 ### 2️⃣ Install Dependencies
@@ -56,13 +56,13 @@ MODEL_PATH = os.path.join(HOME, 'output_model')
 
 #### 📍 In `inference/inference_detr.py`:
 ```python
-model_path = "../detr_api/model.safetensors"
+model_path = "../output_model/model.safetensors" //change the folder from your project
 dataset_path = "path/to/your/dataset"
 ```
 
 #### 📍 In `evaluate.py`:
 ```python
-dataset_path = "detr_api-1"
+dataset_path = "path_roboflow_project" //change the folder from your project
 ```
 
 ## 🚀 Usage Guide
@@ -92,12 +92,12 @@ python evaluate.py
 
 For webcam:
 ```bash
-python inference/inference_detr.py
+python inference/inference_detr.py //to use webcam un comment the webcam code
 ```
 
 For video:
 ```bash
-python inference/inference_detr.py --video_path your_video.mp4
+python inference/inference_detr.py //then input your filename include the extension(.mp4)
 ```
 
 ## 📂 Project Structure
@@ -131,7 +131,7 @@ DETR_AZKA/
 
 Launch TensorBoard:
 ```bash
-tensorboard --logdir logs/
+tensorboard --logdir logs/ //optional
 ```
 
 📈 View:
@@ -168,21 +168,12 @@ tensorboard --logdir logs/
 - Reduce batch size
 - Enable mixed precision
 
-## 🤝 Contributing
-
-1. 🍴 Fork the repository
-2. 🌿 Create branch (`git checkout -b feature/amazing-feature`)
-3. 💻 Commit changes (`git commit -m 'Add feature'`)
-4. 🚀 Push (`git push origin feature/amazing-feature`)
-5. 📝 Open Pull Request
 
 ## 📫 Support
 
 Having issues? Let's solve them:
 
-1. 📚 Check the [issues](https://github.com/yourusername/DETR_AZKA/issues) page
-2. 💬 Open a new issue
-3. 📧 Contact: your.email@example.com
+1. 📧 Contact: hulwanulazkap@gmail.com
 
 ## 📄 License
 

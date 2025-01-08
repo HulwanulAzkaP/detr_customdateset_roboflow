@@ -126,28 +126,30 @@ python inference/inference_detr.py //then input your filename include the extens
 ## 📂 Project Structure
 
 ```
-detr_customdateset_roboflow/
-├── 📁 data/
-│   └── dataset.py
-├── 📁 inference/
-│   ├── inference_detr.py
-│   └── Test.mp4
-├── 📁 models/
-│   └── detr.py
-├── 📁 src/
-│   ├── 📁 config/
-│   │   └── default.py
-│   ├── 📁 data_handling/
-│   │   ├── dataloader.py
-│   │   └── dataset.py
-│   ├── 📁 model/
-│   │   └── detr.py
-│   └── 📁 utils/
-│       ├── helpers.py
-│       ├── logging_config.py
-│── config.py       
-├── evaluate.py
-└── train.py
+detr_customdataset_roboflow/
+├── data/
+│   └── dataset.py              # Dataset handling and preprocessing
+├── inference/
+│   ├── inference_detr.py       # Real-time inference implementation
+│   └── Test.mp4               # Sample test video
+├── models/
+│   └── detr.py                # DETR model implementation
+├── scripts/
+│   └── train.py               # Training script
+├── src/
+│   ├── config/
+│   │   └── default.py         # Configuration parameters
+│   ├── data_handling/
+│   │   ├── dataloader.py      # Data loading utilities
+│   │   └── dataset.py         # Dataset class definitions
+│   ├── model/
+│   │   └── detr.py           # Model architecture
+│   └── utils/
+│       ├── helpers.py         # Utility functions
+│       ├── logging_config.py  # Logging configuration
+│       └── config.py         # Global configuration
+├── evaluate.py                # Evaluation script
+└── train.py                  # Main training script
 ```
 
 ## 📊 Training Monitoring
